@@ -1,8 +1,11 @@
 [package]
 name = "sandglass"
 version = "0.1.1"
-authors = ["mib <mib@mib.dev>"]
 edition = "2021"
+license = "MPL-2.0"
+readme = "README.md"
+repository = "https://github.com/mibmo/sandglass"
+description = "24hour ASCII clock"
 
 [dependencies]
 chrono = "0.4.19"
