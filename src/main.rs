@@ -72,10 +72,14 @@ fn main() {
     // sleep time for redrawing screen
     let refresh_time = Duration::from_millis(100);
 
-    let time_format = match "24h" {
-        "12h" => FORMAT_12_HOUR,
-        "24h" => FORMAT_24_HOUR,
-        _ => FORMAT_24_HOUR,
+    let time_format = match std::env::var("TIME_FORMAT").as_deref() {
+        Ok("12h") => FORMAT_12_HOUR,
+        Ok("24h") => FORMAT_24_HOUR,
+        Ok(invalid) => {
+            eprintln!("invalid time format: {}", invalid);
+            std::process::exit(1)
+        },
+        _  => FORMAT_24_HOUR,
     };
 
     timer(time_format, refresh_time).expect("Error running timer");
