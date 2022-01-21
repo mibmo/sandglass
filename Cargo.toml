@@ -1,8 +1,8 @@
 [package]
 name = "sandglass"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["mib <mib@mib.dev>"]
-edition = "2018"
+edition = "2021"
 
 [dependencies]
 chrono = "0.4.19"
